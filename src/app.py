@@ -74,6 +74,12 @@ activities = {
         "schedule": "Thursdays, 3:30 PM - 5:00 PM",
         "max_participants": 22,
         "participants": []
+    },
+    "Swimming Club": {
+        "description": "Swimming training and water sports",
+        "schedule": "Mondays and Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": []
     }
 }
 
