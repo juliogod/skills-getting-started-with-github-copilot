@@ -80,6 +80,42 @@ activities = {
         "schedule": "Mondays and Wednesdays, 3:30 PM - 5:00 PM",
         "max_participants": 20,
         "participants": []
+    },
+    "Volleyball Team": {
+        "description": "Join our competitive volleyball team and learn advanced techniques",
+        "schedule": "Tuesdays and Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 14,
+        "participants": []
+    },
+    "Tennis Club": {
+        "description": "Improve your tennis skills through practice and friendly matches",
+        "schedule": "Mondays, Wednesdays, Fridays, 4:00 PM - 5:30 PM",
+        "max_participants": 12,
+        "participants": []
+    },
+    "Music Band": {
+        "description": "Learn and perform various musical instruments in an ensemble",
+        "schedule": "Wednesdays and Fridays, 3:30 PM - 5:00 PM",
+        "max_participants": 28,
+        "participants": []
+    },
+    "Photography Club": {
+        "description": "Explore photography techniques, composition, and digital editing",
+        "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Robotics Club": {
+        "description": "Build and program robots for competitions and special projects",
+        "schedule": "Thursdays and Fridays, 4:00 PM - 5:30 PM",
+        "max_participants": 18,
+        "participants": []
+    },
+    "Math Club": {
+        "description": "Solve challenging math problems and participate in math competitions",
+        "schedule": "Mondays, 3:30 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": []
     }
 }
 
@@ -97,6 +133,9 @@ def get_activities():
 @app.post("/activities/{activity_name}/signup")
 def signup_for_activity(activity_name: str, email: str):
     """Sign up a student for an activity"""
+    # Normalize email to lowercase and strip whitespace
+    email = email.lower().strip()
+    
     # Validate activity exists
     if activity_name not in activities:
         raise HTTPException(status_code=404, detail="Activity not found")
